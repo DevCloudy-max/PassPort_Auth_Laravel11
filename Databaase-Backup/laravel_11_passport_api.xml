@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.2.1
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1:3307
+- Generation Time: Mar 02, 2025 at 07:40 AM
+- Server version: 10.4.32-MariaDB
+- PHP Version: 8.0.30
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="laravel_11_passport_api" collation="utf8mb4_general_ci" charset="utf8mb4">
+            <pma:table name="cache">
+                CREATE TABLE `cache` (
+                  `key` varchar(255) NOT NULL,
+                  `value` mediumtext NOT NULL,
+                  `expiration` int(11) NOT NULL,
+                  PRIMARY KEY (`key`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="cache_locks">
+                CREATE TABLE `cache_locks` (
+                  `key` varchar(255) NOT NULL,
+                  `owner` varchar(255) NOT NULL,
+                  `expiration` int(11) NOT NULL,
+                  PRIMARY KEY (`key`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="failed_jobs">
+                CREATE TABLE `failed_jobs` (
+                  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+                  `uuid` varchar(255) NOT NULL,
+                  `connection` text NOT NULL,
+                  `queue` text NOT NULL,
+                  `payload` longtext NOT NULL,
+                  `exception` longtext NOT NULL,
+                  `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="jobs">
+                CREATE TABLE `jobs` (
+                  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+                  `queue` varchar(255) NOT NULL,
+                  `payload` longtext NOT NULL,
+                  `attempts` tinyint(3) unsigned NOT NULL,
+                  `reserved_at` int(10) unsigned DEFAULT NULL,
+                  `available_at` int(10) unsigned NOT NULL,
+                  `created_at` int(10) unsigned NOT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `jobs_queue_index` (`queue`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="job_batches">
+                CREATE TABLE `job_batches` (
+                  `id` varchar(255) NOT NULL,
+                  `name` varchar(255) NOT NULL,
+                  `total_jobs` int(11) NOT NULL,
+                  `pending_jobs` int(11) NOT NULL,
+                  `failed_jobs` int(11) NOT NULL,
+                  `failed_job_ids` longtext NOT NULL,
+                  `options` mediumtext DEFAULT NULL,
+                  `cancelled_at` int(11) DEFAULT NULL,
+                  `created_at` int(11) NOT NULL,
+                  `finished_at` int(11) DEFAULT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="migrations">
+                CREATE TABLE `migrations` (
+                  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+                  `migration` varchar(255) NOT NULL,
+                  `batch` int(11) NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="oauth_access_tokens">
+                CREATE TABLE `oauth_access_tokens` (
+                  `id` varchar(100) NOT NULL,
+                  `user_id` bigint(20) unsigned DEFAULT NULL,
+                  `client_id` bigint(20) unsigned NOT NULL,
+                  `name` varchar(255) DEFAULT NULL,
+                  `scopes` text DEFAULT NULL,
+                  `revoked` tinyint(1) NOT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  `expires_at` datetime DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `oauth_access_tokens_user_id_index` (`user_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="oauth_auth_codes">
+                CREATE TABLE `oauth_auth_codes` (
+                  `id` varchar(100) NOT NULL,
+                  `user_id` bigint(20) unsigned NOT NULL,
+                  `client_id` bigint(20) unsigned NOT NULL,
+                  `scopes` text DEFAULT NULL,
+                  `revoked` tinyint(1) NOT NULL,
+                  `expires_at` datetime DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `oauth_auth_codes_user_id_index` (`user_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="oauth_clients">
+                CREATE TABLE `oauth_clients` (
+                  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+                  `user_id` bigint(20) unsigned DEFAULT NULL,
+                  `name` varchar(255) NOT NULL,
+                  `secret` varchar(100) DEFAULT NULL,
+                  `provider` varchar(255) DEFAULT NULL,
+                  `redirect` text NOT NULL,
+                  `personal_access_client` tinyint(1) NOT NULL,
+                  `password_client` tinyint(1) NOT NULL,
+                  `revoked` tinyint(1) NOT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `oauth_clients_user_id_index` (`user_id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="oauth_personal_access_clients">
+                CREATE TABLE `oauth_personal_access_clients` (
+                  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+                  `client_id` bigint(20) unsigned NOT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="oauth_refresh_tokens">
+                CREATE TABLE `oauth_refresh_tokens` (
+                  `id` varchar(100) NOT NULL,
+                  `access_token_id` varchar(100) NOT NULL,
+                  `revoked` tinyint(1) NOT NULL,
+                  `expires_at` datetime DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `oauth_refresh_tokens_access_token_id_index` (`access_token_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="password_reset_tokens">
+                CREATE TABLE `password_reset_tokens` (
+                  `email` varchar(255) NOT NULL,
+                  `token` varchar(255) NOT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  PRIMARY KEY (`email`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="sessions">
+                CREATE TABLE `sessions` (
+                  `id` varchar(255) NOT NULL,
+                  `user_id` bigint(20) unsigned DEFAULT NULL,
+                  `ip_address` varchar(45) DEFAULT NULL,
+                  `user_agent` text DEFAULT NULL,
+                  `payload` longtext NOT NULL,
+                  `last_activity` int(11) NOT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `sessions_user_id_index` (`user_id`),
+                  KEY `sessions_last_activity_index` (`last_activity`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+            <pma:table name="users">
+                CREATE TABLE `users` (
+                  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+                  `name` varchar(255) NOT NULL,
+                  `email` varchar(255) NOT NULL,
+                  `email_verified_at` timestamp NULL DEFAULT NULL,
+                  `password` varchar(255) NOT NULL,
+                  `remember_token` varchar(100) DEFAULT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `users_email_unique` (`email`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'laravel_11_passport_api'
+    -->
+    <database name="laravel_11_passport_api">
+        <!-- Table cache -->
+        <!-- Table cache_locks -->
+        <!-- Table failed_jobs -->
+        <!-- Table jobs -->
+        <!-- Table job_batches -->
+        <!-- Table migrations -->
+        <table name="migrations">
+            <column name="id">9</column>
+            <column name="migration">0001_01_01_000000_create_users_table</column>
+            <column name="batch">1</column>
+        </table>
+        <table name="migrations">
+            <column name="id">10</column>
+            <column name="migration">0001_01_01_000001_create_cache_table</column>
+            <column name="batch">1</column>
+        </table>
+        <table name="migrations">
+            <column name="id">11</column>
+            <column name="migration">0001_01_01_000002_create_jobs_table</column>
+            <column name="batch">1</column>
+        </table>
+        <table name="migrations">
+            <column name="id">12</column>
+            <column name="migration">2025_02_26_140851_create_oauth_auth_codes_table</column>
+            <column name="batch">1</column>
+        </table>
+        <table name="migrations">
+            <column name="id">13</column>
+            <column name="migration">2025_02_26_140852_create_oauth_access_tokens_table</column>
+            <column name="batch">1</column>
+        </table>
+        <table name="migrations">
+            <column name="id">14</column>
+            <column name="migration">2025_02_26_140853_create_oauth_refresh_tokens_table</column>
+            <column name="batch">1</column>
+        </table>
+        <table name="migrations">
+            <column name="id">15</column>
+            <column name="migration">2025_02_26_140854_create_oauth_clients_table</column>
+            <column name="batch">1</column>
+        </table>
+        <table name="migrations">
+            <column name="id">16</column>
+            <column name="migration">2025_02_26_140855_create_oauth_personal_access_clients_table</column>
+            <column name="batch">1</column>
+        </table>
+        <!-- Table oauth_access_tokens -->
+        <table name="oauth_access_tokens">
+            <column name="id">4ed0cd7e5f8e491ccced4c3a58595cf3ee79f15ba8da44a989cd140a205ccb24bbb1f9ec13cb2742</column>
+            <column name="user_id">1</column>
+            <column name="client_id">1</column>
+            <column name="name">auth_token</column>
+            <column name="scopes">[]</column>
+            <column name="revoked">0</column>
+            <column name="created_at">2025-03-02 06:11:25</column>
+            <column name="updated_at">2025-03-02 06:11:25</column>
+            <column name="expires_at">2026-03-02 06:11:25</column>
+        </table>
+        <table name="oauth_access_tokens">
+            <column name="id">52331ea67315fa276f06ce42608e6bbdc3c6ee915c5d2400302ec62fb791348185c75a7b766f2383</column>
+            <column name="user_id">4</column>
+            <column name="client_id">1</column>
+            <column name="name">auth_token</column>
+            <column name="scopes">[]</column>
+            <column name="revoked">0</column>
+            <column name="created_at">2025-03-02 06:28:25</column>
+            <column name="updated_at">2025-03-02 06:28:25</column>
+            <column name="expires_at">2026-03-02 06:28:25</column>
+        </table>
+        <table name="oauth_access_tokens">
+            <column name="id">832c839ed662cf4f082d553523d4daa2d1130b540d877b6faf4053db96455b93461ba76dd7855f9a</column>
+            <column name="user_id">2</column>
+            <column name="client_id">1</column>
+            <column name="name">auth_token</column>
+            <column name="scopes">[]</column>
+            <column name="revoked">0</column>
+            <column name="created_at">2025-03-02 06:12:30</column>
+            <column name="updated_at">2025-03-02 06:12:30</column>
+            <column name="expires_at">2026-03-02 06:12:30</column>
+        </table>
+        <!-- Table oauth_auth_codes -->
+        <!-- Table oauth_clients -->
+        <table name="oauth_clients">
+            <column name="id">1</column>
+            <column name="user_id">NULL</column>
+            <column name="name">Laravel Personal Access Client</column>
+            <column name="secret">wjKr0mZZFgEpPoey7RgfdlYbO7B81AzJEun55ldp</column>
+            <column name="provider">NULL</column>
+            <column name="redirect">http://localhost</column>
+            <column name="personal_access_client">1</column>
+            <column name="password_client">0</column>
+            <column name="revoked">0</column>
+            <column name="created_at">2025-03-02 06:10:46</column>
+            <column name="updated_at">2025-03-02 06:10:46</column>
+        </table>
+        <!-- Table oauth_personal_access_clients -->
+        <table name="oauth_personal_access_clients">
+            <column name="id">1</column>
+            <column name="client_id">1</column>
+            <column name="created_at">2025-03-02 06:10:46</column>
+            <column name="updated_at">2025-03-02 06:10:46</column>
+        </table>
+        <!-- Table oauth_refresh_tokens -->
+        <!-- Table password_reset_tokens -->
+        <!-- Table sessions -->
+        <!-- Table users -->
+        <table name="users">
+            <column name="id">1</column>
+            <column name="name">omkar</column>
+            <column name="email">omkar@gmail.com</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">$2y$12$YcsbEt2cMBjoidNc/88Lou5WQxGncfBRG/WefrUgbbPMRfK/GTQBC</column>
+            <column name="remember_token">NULL</column>
+            <column name="created_at">2025-03-02 06:09:07</column>
+            <column name="updated_at">2025-03-02 06:09:07</column>
+        </table>
+        <table name="users">
+            <column name="id">2</column>
+            <column name="name">jay</column>
+            <column name="email">jay@gmail.com</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">$2y$12$XgwW0kylOZr/PIYeEiLOseLEYG.ObB68bvw/ai853mZcXTzb4uzk6</column>
+            <column name="remember_token">NULL</column>
+            <column name="created_at">2025-03-02 06:12:01</column>
+            <column name="updated_at">2025-03-02 06:12:01</column>
+        </table>
+        <table name="users">
+            <column name="id">3</column>
+            <column name="name">Sanjay</column>
+            <column name="email">sajay@gmail.com</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">$2y$12$vVbtaDrGNgRt.9B1M8n7SO1Qcmn7JT5puqf.OC4QVRjIYvScgQFa2</column>
+            <column name="remember_token">NULL</column>
+            <column name="created_at">2025-03-02 06:27:25</column>
+            <column name="updated_at">2025-03-02 06:27:25</column>
+        </table>
+        <table name="users">
+            <column name="id">4</column>
+            <column name="name">ashish</column>
+            <column name="email">ashish@gmail.com</column>
+            <column name="email_verified_at">NULL</column>
+            <column name="password">$2y$12$L49elg4LYHxuoOzCrwdhgOP2hzOli88uQ7kZAinps.Dbsmmk/y9.e</column>
+            <column name="remember_token">NULL</column>
+            <column name="created_at">2025-03-02 06:28:05</column>
+            <column name="updated_at">2025-03-02 06:28:05</column>
+        </table>
+    </database>
+</pma_xml_export>

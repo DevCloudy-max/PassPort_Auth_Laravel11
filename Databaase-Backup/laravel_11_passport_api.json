@@ -1,0 +1,86 @@
+[
+{"type":"header","version":"5.2.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"laravel_11_passport_api"},
+{"type":"table","name":"cache","database":"laravel_11_passport_api","data":
+[
+
+]
+}
+,{"type":"table","name":"cache_locks","database":"laravel_11_passport_api","data":
+[
+
+]
+}
+,{"type":"table","name":"failed_jobs","database":"laravel_11_passport_api","data":
+[
+
+]
+}
+,{"type":"table","name":"jobs","database":"laravel_11_passport_api","data":
+[
+
+]
+}
+,{"type":"table","name":"job_batches","database":"laravel_11_passport_api","data":
+[
+
+]
+}
+,{"type":"table","name":"migrations","database":"laravel_11_passport_api","data":
+[
+{"id":"9","migration":"0001_01_01_000000_create_users_table","batch":"1"},
+{"id":"10","migration":"0001_01_01_000001_create_cache_table","batch":"1"},
+{"id":"11","migration":"0001_01_01_000002_create_jobs_table","batch":"1"},
+{"id":"12","migration":"2025_02_26_140851_create_oauth_auth_codes_table","batch":"1"},
+{"id":"13","migration":"2025_02_26_140852_create_oauth_access_tokens_table","batch":"1"},
+{"id":"14","migration":"2025_02_26_140853_create_oauth_refresh_tokens_table","batch":"1"},
+{"id":"15","migration":"2025_02_26_140854_create_oauth_clients_table","batch":"1"},
+{"id":"16","migration":"2025_02_26_140855_create_oauth_personal_access_clients_table","batch":"1"}
+]
+}
+,{"type":"table","name":"oauth_access_tokens","database":"laravel_11_passport_api","data":
+[
+{"id":"4ed0cd7e5f8e491ccced4c3a58595cf3ee79f15ba8da44a989cd140a205ccb24bbb1f9ec13cb2742","user_id":"1","client_id":"1","name":"auth_token","scopes":"[]","revoked":"0","created_at":"2025-03-02 06:11:25","updated_at":"2025-03-02 06:11:25","expires_at":"2026-03-02 06:11:25"},
+{"id":"52331ea67315fa276f06ce42608e6bbdc3c6ee915c5d2400302ec62fb791348185c75a7b766f2383","user_id":"4","client_id":"1","name":"auth_token","scopes":"[]","revoked":"0","created_at":"2025-03-02 06:28:25","updated_at":"2025-03-02 06:28:25","expires_at":"2026-03-02 06:28:25"},
+{"id":"832c839ed662cf4f082d553523d4daa2d1130b540d877b6faf4053db96455b93461ba76dd7855f9a","user_id":"2","client_id":"1","name":"auth_token","scopes":"[]","revoked":"0","created_at":"2025-03-02 06:12:30","updated_at":"2025-03-02 06:12:30","expires_at":"2026-03-02 06:12:30"}
+]
+}
+,{"type":"table","name":"oauth_auth_codes","database":"laravel_11_passport_api","data":
+[
+
+]
+}
+,{"type":"table","name":"oauth_clients","database":"laravel_11_passport_api","data":
+[
+{"id":"1","user_id":null,"name":"Laravel Personal Access Client","secret":"wjKr0mZZFgEpPoey7RgfdlYbO7B81AzJEun55ldp","provider":null,"redirect":"http:\/\/localhost","personal_access_client":"1","password_client":"0","revoked":"0","created_at":"2025-03-02 06:10:46","updated_at":"2025-03-02 06:10:46"}
+]
+}
+,{"type":"table","name":"oauth_personal_access_clients","database":"laravel_11_passport_api","data":
+[
+{"id":"1","client_id":"1","created_at":"2025-03-02 06:10:46","updated_at":"2025-03-02 06:10:46"}
+]
+}
+,{"type":"table","name":"oauth_refresh_tokens","database":"laravel_11_passport_api","data":
+[
+
+]
+}
+,{"type":"table","name":"password_reset_tokens","database":"laravel_11_passport_api","data":
+[
+
+]
+}
+,{"type":"table","name":"sessions","database":"laravel_11_passport_api","data":
+[
+
+]
+}
+,{"type":"table","name":"users","database":"laravel_11_passport_api","data":
+[
+{"id":"1","name":"omkar","email":"omkar@gmail.com","email_verified_at":null,"password":"$2y$12$YcsbEt2cMBjoidNc\/88Lou5WQxGncfBRG\/WefrUgbbPMRfK\/GTQBC","remember_token":null,"created_at":"2025-03-02 06:09:07","updated_at":"2025-03-02 06:09:07"},
+{"id":"2","name":"jay","email":"jay@gmail.com","email_verified_at":null,"password":"$2y$12$XgwW0kylOZr\/PIYeEiLOseLEYG.ObB68bvw\/ai853mZcXTzb4uzk6","remember_token":null,"created_at":"2025-03-02 06:12:01","updated_at":"2025-03-02 06:12:01"},
+{"id":"3","name":"Sanjay","email":"sajay@gmail.com","email_verified_at":null,"password":"$2y$12$vVbtaDrGNgRt.9B1M8n7SO1Qcmn7JT5puqf.OC4QVRjIYvScgQFa2","remember_token":null,"created_at":"2025-03-02 06:27:25","updated_at":"2025-03-02 06:27:25"},
+{"id":"4","name":"ashish","email":"ashish@gmail.com","email_verified_at":null,"password":"$2y$12$L49elg4LYHxuoOzCrwdhgOP2hzOli88uQ7kZAinps.Dbsmmk\/y9.e","remember_token":null,"created_at":"2025-03-02 06:28:05","updated_at":"2025-03-02 06:28:05"}
+]
+}
+]
